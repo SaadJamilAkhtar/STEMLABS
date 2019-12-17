@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form method="POST" class="appointment-form" id="appointment-form" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2>Sign Up</h2><br>
+                <a class="d-inline-block button gradient-bg" href="../">Home</a><br><br>
+                {% if message %}
+                    <h2>{{ message }}</h2>
+                {% endif %}
+                <div class="form-group-1">
+                    {{ form }}
+                </div>
+                <div class="form-submit">
+                    <input type="submit" class="submit" value="Sign Up" />
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

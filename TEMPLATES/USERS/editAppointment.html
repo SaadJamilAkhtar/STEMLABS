@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit appointment</title>
+</head>
+<body>
+<form method="POST" id="appointment-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>Update Appointment</h2>
+    {% if message %}
+    <h2>{{ message }}</h2>
+    {% endif %}
+    <div>
+        {{ form.as_p }}
+    </div>
+
+    <input href type="submit" name="next" id="next" class="submit" value="Update"/>
+
+</form>
+</body>
+</html>

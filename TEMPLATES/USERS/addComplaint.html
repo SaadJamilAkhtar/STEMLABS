@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Complaint</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form method="POST" class="appointment-form" id="appointment-form">
+                {% csrf_token %}
+                <h2>Add complaint</h2>
+                {% if message %}
+                    <h2>{{ message }}</h2>
+                {% endif %}
+                <div class="form-group-1">
+                    {{ form }}
+                </div>
+                <div class="form-submit">
+                    <input href type="submit" name="next" id="next" class="submit" value="Add Complaint" />
+                </div>
+                <a class="d-inline-block button gradient-bg" href="Home">Home</a>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
